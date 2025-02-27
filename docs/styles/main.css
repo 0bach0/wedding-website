@@ -10124,3 +10124,7 @@ body {
 .donate-card{
     text-align: center;
 }
+
+.button-hover:hover{
+    cursor: pointer;
+}
