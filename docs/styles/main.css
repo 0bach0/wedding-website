@@ -10072,3 +10072,55 @@ body {
     left: 0;
     margin: 0px 15px 15px 15px;
 }
+
+.up_button {
+    margin-bottom: 5px;
+    padding-bottom: 5px;
+    border-bottom-color: white;
+    border-width: thin;
+    border-bottom-style: solid;
+}
+
+.nice_button{
+    background: #ffc0c0;
+    padding: 6px;
+    border-radius: 5%;
+    color: #8e0606;
+}
+
+.nice_button_left{
+    background: #ffc0c0;
+    padding: 6px;
+    border-radius: 5%;
+    color: #8e0606;
+}
+
+.bottom_left_group{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@media(min-width: 576px) {
+    .donate-box{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+    }
+}
+
+@media (min-width: 768px) {
+    .donate-box{
+        display: flex;
+        justify-content: space-between;
+        flex-direction: row;
+    }
+}
+
+.qr-code-image{
+    width: 85%;
+}
+
+.donate-card{
+    text-align: center;
+}

@@ -55,32 +55,23 @@
             return result;
         }
 
-        $(document).ready(function () {
-            // function getText(){
-            //     var result = null;
-            //     $.ajax( { url: "https://raw.githubusercontent.com/AndersonChoi/wedding-card/master/README.md",
-            //             type: 'get',
-            //             dataType: 'html',
-            //             async: false,
-            //             success: function(data) { result = data; }
-            //         }
-            //     );
-            //     FileReady = true;
-            //     return result;
-            // }
-            // var markdown_source = getText();
-            // var comment_contents = markdown_source.split("축하의 말")[1];
-
-            // var md = new Remarkable();
-            // $("#comments").append(md.render(comment_contents));
-
-            
+        $(document).ready(function () {            
             if(findGetParameter('gift')=='false'){
                 $('#gifts').hide();
             }
         });
 
-
+        function toggleMusic(){
+            var player = document.getElementById('player');
+            var playerIcon = document.getElementById('player-icon');
+            if(player.paused){
+                player.play();
+                playerIcon.className = 'fa fa-pause fa-2x';
+            }else{
+                player.pause();
+                playerIcon.className = 'fa fa-music fa-2x';
+            }
+        }
 
 
     </script>
@@ -165,7 +156,7 @@
                         <div class="my-3">
                             <iframe 
                                 class="google-map"
-                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3710.245738018283!2d105.8493338!3d21.576328900000004!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313527a4c4e2ad95%3A0x8616d9a848a710f7!2zVHLhu5FuZyDEkOG7k25nIFBhbGFjZQ!5e0!3m2!1sja!2s!4v1738762833283!5m2!1sja!2s" 
+                                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3710.245738524971!2d105.84675887599062!3d21.576328880213545!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x313527a4c4e2ad95%3A0x8616d9a848a710f7!2zVHLhu5FuZyDEkOG7k25nIFBhbGFjZQ!5e0!3m2!1svi!2s!4v1740652927446!5m2!1svi!2s"
                                 height="400px" style="border:0;"
                                 allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                             </iframe>
@@ -195,7 +186,7 @@
                     <div class="col-md-5 col-sm-12">
                         <iframe 
                             class="google-map"
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3924.6927201966146!2d107.08508499999999!3d10.3664358!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31756fc5f349ac29%3A0x7463f56c1bca12cb!2zTmjDoCBow6BuZyBNYXhpbSdz!5e0!3m2!1sja!2s!4v1738762471897!5m2!1sja!2s" 
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3924.6927203249443!2d107.0825100757966!3d10.366435789758539!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31756fc5f349ac29%3A0x7463f56c1bca12cb!2zTmjDoCBow6BuZyBNYXhpbSdz!5e0!3m2!1svi!2s!4v1740652895947!5m2!1svi!2s"
                             height="400px" style="border:0;"
                             allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
                         </iframe>
@@ -221,7 +212,7 @@
 
                         <div class="row flex-center spacer">
                             <h4>18/10/2020 - Lần đầu gặp nhau</h4>
-                            <img alt="Tin nhắn đầu tiên" class="img-fluid" src="images/1st-party.jpg"/>
+                            <img alt="Tin nhắn đầu tiên" class="img-fluid" src="images/1st-party.png"/>
                             Nhờ thêm tác động của “bà mối” (chị gái tóc ngắn trong ảnh), Chú Rể bắt đầu để ý, chăm reply story, rồi rủ Cô Dâu đi ăn uống trà sữa mỗi tuần (mặc dù CD-CR ở 2 tỉnh khá xa nhau)..
                         </div>
 
@@ -288,190 +279,11 @@
                 </div>
             </div>
         </div>
-        <!-- 
-       <div class="ww-section parallax-window  text-white" data-parallax="scroll" data-image-src="images/gift/gift-background.jpg" id="gifts">
-            <div class="ww-gift-section">
-                <div class="container">
-                    <h2 class="h1 text-center pb-3 ww-title" style="font-family: 'Noto Serif KR', serif;">Gift for our
-                        wedding</h2>
-                    <div class="col text-center mb-5">
-                        <h6 style="font-family: 'Noto Serif KR', serif;">
-                            저희 부부가 앞으로 살아나갈 일상에<br>
-                            오래도록 특별한 기억을 선물하고 싶으신가요?<br>
-                            그렇다면 고민하는 대신 아래 목록을 참고해 주세요.<br>
-                            저희가 필요로 하는 물건들을 정리해 두었습니다.<br>
-                            애정어린 마음으로 보내주신 선물은<br>
-                            가까이 두어 오래도록 아껴 쓰고,<br>
-                            소중하게 간직하겠습니다.
-                            <br><br>
-                            (아래 선물버튼을 눌러 신랑, 신부에게 예약메시지를 보내세요!)
-                        </h6>
-                    </div>
-                    <div class="ww-gift">
-                        <div class="gift-columns">
-                            <div class="gift">
-                                <img alt="와인셀러" class="img-fluid gift-img gift-selected" src="images/gift/wineceller.png"/>
-                                <div class="btn-group gift-btn-group" role="group">
-                                    <button class="btn btn-default gift-btn"
-                                            onclick="window.open('https://smartstore.naver.com/dhk00840/products/4311205513')">
-                                        <i class="fa fa-search"></i></button>
-                                    <button class="btn btn-default gift-btn gift-send" data-name="와인셀러"
-                                            onclick="alert('다른분에게 예약된 선물입니다.');"><i
-                                            class="fa fa-gift"></i></button>
-                                </div>
-                            </div>
-                            <div class="gift">
-                                <img alt="전동클렌저" class="img-fluid gift-img gift-selected"
-                                     src="images/gift/philips_clenser.png"/>
-                                <div class="btn-group gift-btn-group" role="group">
-                                    <button class="btn btn-default gift-btn"
-                                            onclick="window.open('https://www.philips.co.kr/c-p/BSC111_06/visapure-mini-facial-cleanser')">
-                                        <i class="fa fa-search"></i></button>
-                                    <button class="btn btn-default gift-btn gift-send" data-name="전동클렌저"
-                                            onclick="alert('다른분에게 예약된 선물입니다.');"><i
-                                            class="fa fa-gift"></i></button>
-                                </div>
-                            </div>
-                            <div class="gift">
-                                <img alt="드라이기" class="img-fluid gift-img gift-selected" src="images/gift/dyson.png"/>
-                                <div class="btn-group gift-btn-group" role="group">
-                                    <button class="btn btn-default gift-btn"
-                                            onclick="window.open('https://www.kr.dyson.com/products/hair-care/dyson-supersonic-hair-dryer')">
-                                        <i class="fa fa-search"></i></button>
-                                    <button  class="btn btn-default gift-btn gift-send" data-name="드라이기"
-                                             onclick="alert('다른분에게 예약된 선물입니다.');"><i
-                                            class="fa fa-gift"></i></button>
-                                </div>
-                            </div>
-                            <div class="gift">
-                                <img alt="믹서기" class="img-fluid gift-img gift-selected" src="images/gift/blender.png"/>
-                                <div class="btn-group gift-btn-group" role="group">
-                                    <button class="btn btn-default gift-btn"
-                                            onclick="window.open('http://jenniferoom.co.kr/product/detail.html?product_no=85&cate_no=24&display_group=1')">
-                                        <i class="fa fa-search"></i></button>
-                                    <button  class="btn btn-default gift-btn gift-send" data-name="믹서기"
-                                             onclick="alert('다른분에게 예약된 선물입니다.');"><i
-                                            class="fa fa-gift"></i></button>
-                                </div>
-                            </div>
-                            <div class="gift">
-                                <img alt="레고" class="img-fluid gift-img gift-selected" src="images/gift/lego.png"/>
-                                <div class="btn-group gift-btn-group" role="group">
-                                    <button class="btn btn-default gift-btn"
-                                            onclick="window.open('https://shop.lego.com/ko-KR/product/10232')"><i
-                                            class="fa fa-search"></i></button>
-                                    <button class="btn btn-default gift-btn gift-send" data-name="레고"
-                                            
-                                             onclick="alert('다른분에게 예약된 선물입니다.');"><i
-                                            class="fa fa-gift"></i></button>
-                                </div>
-                            </div>
-                            <div class="gift">
-                                <img alt="전기레인지" class="img-fluid gift-img gift-selected" src="images/gift/range.png"/>
-                                <div class="btn-group gift-btn-group" role="group">
-                                    <button class="btn btn-default gift-btn"
-                                            onclick="window.open('https://www.lge.co.kr/lgekor/product/kitchen/electricRange/productDetail.do?cateId=4410&prdId=EPRD.333447')">
-                                        <i class="fa fa-search"></i></button>
-                                    <button class="btn btn-default gift-btn gift-send" data-name="전기레인지"
-                                            
-                                             onclick="alert('다른분에게 예약된 선물입니다.');"><i
-                                            class="fa fa-gift"></i></button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="ww-section ww-rsvp-detail" id="map">
-            <div class="container">
-                <div class="col text-center">
-                    <h2 class="h1 text-center pb-3 ww-title" style="font-family: 'Noto Serif KR', serif;">오시는 길</h2>
-                    <div>
-                        <h5 style="font-family: 'Noto Serif KR', serif;">센텀사이언스파크웨딩홀 23층 스카이홀</h5>
-                        <h6 style="font-family: 'Noto Serif KR', serif;">(부산 해운대구 센텀중앙로 79)</h6>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <div class="col-md-12">
-                        <div class="my-3 text-center">
-                            <a href="http://naver.me/5pTy3HCa">
-                                <img alt="naver-map" class="map-icon" id="naver-map"
-                                     src="images/map/naver-map.png"/>
-                            </a>
-                            <a href="http://dmaps.kr/2bms8">
-                                <img alt="kakao-map" class="map-icon" id="kakao-map"
-                                     src="images/map/kakao-map.png"/>
-                            </a>
-                            <a href="https://maps.app.goo.gl/jfDxw">
-                                <img alt="google-map" class="map-icon" id="google-map"
-                                     src="images/map/google-map.png"/>
-                            </a>
-                        </div>
-                        <div class="col text-center">
-                            <label style="font-family: 'Noto Serif KR', serif; font-size: 15px;">
-                                셔틀버스 - 센텀시티역 4번출구앞에서 15분 간격으로 운행
-                            </label>
-                        </div>
-                        <div class="my-3">
-                            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3261.297439052569!2d129.1238775160104!3d35.1741384652207!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x356892c2513ecf5d%3A0x7d362ece2091e2f8!2z7IS87YWA7IKs7J207Ja47Iqk7YyM7YGsIOy7qOuypOyFmO2ZgA!5e0!3m2!1sko!2skr!4v1554092125630!5m2!1sko!2skr" width="100%" height="400" frameborder="0" style="border:0" allowfullscreen></iframe>
-                        </div>
-                    </div>
-                </div>
-
-
-            </div>
-        </div>
-
-        <div class="ww-section bg-light" id="comment">
-            <div class="ww-photo-gallery">
-                <div class="container">
-                    <div class="col text-center">
-                        <h2 class="h1 text-center pb-3 ww-title" style="font-family: 'Noto Serif KR', serif;">축하메시지</h2><br>
-                        <div id="comments"></div>
-                        <br>
-                        <div class="row">
-                            <div class="col text-center"><form action="https://github.com/AndersonChoi/wedding-card/blob/master/README.md">
-                                <button class="btn btn-primary btn-submit" type="submit">메시지 남기러 가기</button></form>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div> -->
+      
 
     </div>
 </div>
 </div>
-<!-- <div aria-hidden="true" aria-labelledby="exampleModalLabel" class="modal fade" id="giftMailModal" role="dialog"
-     tabindex="-1">
-    <div class="modal-dialog modal-dialog-centered" role="document">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLongTitle">선물하기 - <span id="gift-name"></span></h5>
-                <button aria-label="Close" class="close" data-dismiss="modal" type="button">
-                    <span aria-hidden="true">&times;</span>
-                </button>
-            </div>
-            <div class="modal-body">
-                <div class="input-group mb-3">
-                    <div class="input-group-prepend">
-                        <span class="input-group-text">보내는 분 성함</span>
-                    </div>
-                    <input aria-describedby="basic-addon3" class="form-control" id="sender-name" type="text">
-                </div>
-                <div class="input-group">
-                    <textarea aria-label="With textarea" class="form-control" id="sender-message"
-                              placeholder="신랑, 신부에게 선물 예약과 함께 보낼 메시지를 입력해주세요. 이 메시지는 신랑, 신부에게 발송됩니다." rows=4></textarea>
-                </div>
-            </div>
-            <div class="modal-footer">
-                <button class="btn btn-primary" id="reserveGiftButton" type="button">예약</button>
-            </div>
-        </div>
-    </div>
-</div> -->
 <footer></footer>
 <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
@@ -481,15 +293,69 @@
 <script src="js/ekko-lightbox.min.js"></script>
 <script src="scripts/main.js"></script>
 
-<div class="bottom_right"><i class="fa fa-arrow-up fa-2x" id="go-to-top"></i>
+<div id="gifts" class="bottom_right nice_button" data-toggle="modal" data-target="#giftModal">
+    <i class="fa fa-gift fa-2x"></i>
 </div>
 
-<div class="bottom_left">
-    <audio id="player" src="mus.mp3"></audio>
-    <div>
-        <i class="fa fa-music fa-2x" onclick="document.getElementById('player').play()"></i>
+<div id="group" class="btn-group bottom_left bottom_left_group nice_button_left">    
+    <div class="up_button">
+        <i class="fa fa-arrow-up fa-2x" id="go-to-top"></i>
+    </div>
+    
+    <div class="">
+        <audio id="player" src="mus.mp3"></audio>
+        <div>
+            <i id="player-icon" class="fa fa-music fa-2x" onclick="toggleMusic()"></i>
+        </div>
     </div>
 </div>
+
+  
+  <!-- Modal -->
+  <div class="modal fade" id="giftModal" tabindex="-1" role="dialog" aria-labelledby="giftModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="giftModalLabel">Gửi tặng quà đến cô dâu & chú rể</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+
+        <div class="modal-body donate-box">
+            <div class="donate-card">
+              <h3>Chú rể</h3>
+              <img class="qr-code-image" src="images/bach-qr.png">
+              <p>
+                Ngân hàng: <strong>Vietcombank</strong>
+                <br>
+                Tên tài khoản: <strong>Nguyễn Xuân Bách</strong>
+                <br>
+                Số tài khoản: <strong>1053397219</strong>
+              </p>
+            </div>
+            <div class="donate-card">
+              <h3>Cô dâu</h3>
+              <img class="qr-code-image" src="images/thu-qr.png">
+              <p>
+                Ngân hàng: <strong>quân đội MB Bank</strong>
+                <br>
+                Tên tài khoản: <strong>Phạm Ngọc Anh Thư</strong>
+                <br>
+                Số tài khoản: <strong>47706042001</strong>
+              </p>
+              
+            </div>
+          </div>
+        
+
+        <!-- <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          <button type="button" class="btn btn-primary">Save changes</button>
+        </div> -->
+      </div>
+    </div>
+  </div>
 
 </body>
 </html>
